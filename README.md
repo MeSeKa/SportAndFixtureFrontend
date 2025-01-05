@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sport and Fixture Management Application
 
-## Getting Started
+This is a full-stack web application developed as a final project for the **BLM19417E Web Design and Programming** course. The application allows users to manage sports teams, players, and fixtures efficiently. It provides full CRUD functionality and real-time feedback using modern web technologies.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Teams Management**: View, add, edit, and delete teams.
+- **Players Management**: Manage players associated with different teams.
+- **Fixtures Management**: Schedule fixtures, record match results, and track match status.
+- **Dynamic Statistics**: Detailed statistics for each team, including total matches, wins, losses, draws, and not-played fixtures.
+- **User-Friendly Interface**: Clean and responsive UI with color-coded status indicators.
+- **Real-Time Status Messages**: Instant feedback on operations using Redux.
+
+## Technology Stack
+
+- **Frontend**: React (with Next.js and Tailwind CSS)
+- **Backend**: ASP.NET Core Web API
+- **Database**: SQL Server
+- **State Management**: Redux
+
+## Project Structure
+
+```plaintext
+SportAndFixture/
+├── SportAndFixtureFrontend/    # Frontend (React + Next.js)
+├── SportAndFixtureWebApi/      # Backend (ASP.NET Core Web API)
+├── Screenshots/                # Screenshots of the application
+├── Report.docx                 # Detailed project report (Word)
+├── Report.pdf                  # Detailed project report (PDF)
+└── README.md                   # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup Instructions
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js**: Ensure that Node.js (v14+) is installed.
+- **.NET SDK**: Install the .NET SDK (v6.0+).
+- **SQL Server**: Ensure SQL Server is installed and running.
 
-## Learn More
+### Backend Setup (ASP.NET Core Web API)
 
-To learn more about Next.js, take a look at the following resources:
+1. Navigate to the backend project directory:
+   ```bash
+   cd SportAndFixtureWebApi
+   ```
+2. Restore dependencies:
+   ```bash
+   dotnet restore
+   ```
+3. Update the database connection string in `appsettings.json`.
+4. Apply migrations and create the database:
+   ```bash
+   dotnet ef database update
+   ```
+5. Run the Web API:
+   ```bash
+   dotnet run
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The backend will start at `https://localhost:5001`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend Setup (React + Next.js)
 
-## Deploy on Vercel
+1. Navigate to the frontend project directory:
+   ```bash
+   cd SportAndFixtureFrontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The frontend will be available at `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Usage
+
+1. Open the frontend in your browser: `http://localhost:3000`
+2. Use the navigation menu to explore the application:
+   - **Teams**: Manage all registered teams.
+   - **Players**: View and manage players.
+   - **Fixtures**: Schedule fixtures and track results.
+
+## Screenshots
+
+### Teams Page
+![Teams Page](./public/screenshots/Teams.png)
+
+### Team Details Page
+![Team Details Page](./public/screenshots/TeamDetails.png)
+
+### Players Page
+![Players Page](./public/screenshots/Players.png)
+
+### Fixtures Page
+![Fixtures Page](./public/screenshots/Fixtures.png)
+
+### Edit Fixture Page
+![Edit Fixture Page](./public/screenshots/EditFixture.png)
+
+### Delete Player Confirmation
+![Delete Player Confirmation](./public/screenshots/PlayerDelete.png)
+
+## License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
+
+## Author
+Developed by **MeSeKara** as a final project for **BLM19417E Web Design and Programming**.
